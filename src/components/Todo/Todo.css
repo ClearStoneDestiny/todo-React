@@ -71,7 +71,13 @@ li{
     background: #edeef0;
     margin-bottom: 10px;
     border-radius: 5px;
-    /* opacity: 0; */
+    opacity: 0;
+    animation: popItem .8s ease forwards;
+}
+
+.Deleted-item{
+    animation: deleteItem 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    transform-origin: 0% 100%;
 }
 
 .UnChecked{
@@ -115,4 +121,26 @@ li{
     font-family: inherit;
     font-size: 16px;
     cursor: pointer;
+}
+
+@keyframes popItem {
+    0%{
+        opacity: 0;
+        transform: translateY(-400px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes deleteItem {
+    0%{
+        opacity: 1;
+        transform: rotate(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(600px) rotate(90deg);
+    }
 }

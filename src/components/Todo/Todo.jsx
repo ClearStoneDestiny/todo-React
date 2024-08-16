@@ -70,7 +70,8 @@ function Todo(){
     }
 
     function deleteTask(id){
-        setTasks([...tasks.filter(task => task.id !== id)])
+        const taskToDelete = [...tasks.filter(task => task.id !== id)];
+        setTasks(taskToDelete);
     }
 
     function changeTask(id){
